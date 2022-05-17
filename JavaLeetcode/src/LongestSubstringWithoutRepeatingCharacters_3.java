@@ -124,3 +124,38 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
 ////        5
 //
 ////------------------------------------------------------------------------------------
+
+//import java.util.HashSet;
+//public class LongestSubstringWithoutRepeatingCharacters_3 {
+//
+//    public static int lengthOfLongestSubstring(String s) {
+//        int max = 0;
+//        int i = 0;
+//        int j = 0;
+//        HashSet hs = new HashSet();
+//
+//        while (j < s.length()) {
+//            if (!hs.contains(s.charAt(j))) {
+//                hs.add(s.charAt(j));
+//                j++;
+//                max = Math.max(hs.size(), max);
+//
+//                System.out.println("max: " + max + " => " + hs);
+//
+//            } else {
+//                i++;
+//                j = i;
+//                hs.clear();
+//            }
+//        }
+//        return max;
+//    }
+//
+//    public static void main(String[] args) {
+//        String str = "aaabcde"; // 5
+////        String str = "abcabcbb"; // 3
+////        String str = "pwwkew"; // 3
+//
+//        System.out.println(lengthOfLongestSubstring(str));
+//    }
+//}
