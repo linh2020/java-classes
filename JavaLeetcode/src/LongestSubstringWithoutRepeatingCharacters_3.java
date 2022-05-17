@@ -38,10 +38,10 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
     }
 
     public static void main(String[] args) {
-//        String str = "aaabcde"; // 5
+        String str = "aaabcde"; // 5
 //        String str = "abcabcbb"; // 3
 //        String str = "pwwkew"; // 3
-        String str = MyClasses.randomString(6);
+//        String str = MyClasses.randomString(6);
 //        System.out.println(str);
 
         System.out.println(lengthOfLongestSubstring(str));
@@ -159,3 +159,13 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
 //        System.out.println(lengthOfLongestSubstring(str));
 //    }
 //}
+//
+////        max: 1 => [a]
+////        max: 1 => [a]
+////        max: 1 => [a]
+////        max: 2 => [a, b]
+////        max: 3 => [a, b, c]
+////        max: 4 => [a, b, c, d]
+////        max: 5 => [a, b, c, d, e]
+////        5
+//
