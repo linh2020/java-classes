@@ -20,18 +20,24 @@
 //        Output: 0
 //        Explanation: In this case, no transactions are done and the max profit = 0.
 
-
 public class BestTimetoBuyandSellStock_121 {
 
     public static int maxProfit(int[] prices) {
-        int max = 0;
 
-        for (int i = 0; i < prices.length; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                if ((prices[j] - prices[i]) > max) {
-                    max = prices[j] - prices[i];
-                    System.out.println(prices[j] + ", " + prices[i] + " => " + max);
-                }
+        int max = 0;
+        int left = 0;
+        int curr = 0;
+
+        for (int right = 1; right < prices.length; right++) {
+            curr = prices[right] - prices[left];
+            if (prices[left] < prices[right]) {
+                max = Math.max(max, curr);
+
+                System.out.println(prices[right] + ", " + prices[left] + " => " + max);
+
+            } else {
+                left = right;
+                System.out.println("\t\t" + prices[right] + ", " + prices[left] + " => " + max);
             }
         }
         return max;
@@ -42,9 +48,35 @@ public class BestTimetoBuyandSellStock_121 {
         ////        Input: prices = [7,1,5,3,6,4]
         ////        Output: 5
 
-//        int[] number = {7, 1, 5, 3, 6, 4};
-        int[] number = {7, 6, 4, 3, 1};
-        System.out.println(maxProfit(number));
+//        int[] prices = {7, 1, 5, 3, 6, 4};
+        int[] prices = {7, 6, 4, 3, 1};
+//        int[] prices = {7, 6, 4, 3, 9};
 
-    }
-}
+        System.out.println(maxProfit(prices));
+    } // End main method
+
+//    public static int maxProfit(int[] prices) {
+//        int left = 0;
+//        int right = 1;
+//
+//        int max = 0;
+//        int curr = 0;
+//
+//        while (right < prices.length) {
+//            curr = prices[right] - prices[left];
+//            if (prices[left] < prices[right]) {
+//                max = Math.max(max, curr);
+//
+//                System.out.println(prices[right] + ", " + prices[left] + " => " + max);
+//
+//            } else {
+//                left = right;
+//
+//                System.out.println("\t\t" + prices[right] + ", " + prices[left] + " => " + max);
+//            }
+//            right++;
+//        }
+//        return max;
+//    }
+
+} // End class
